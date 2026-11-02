@@ -1,0 +1,201 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="icon" href="../app/icon-192.png"><link rel="preconnect" href="https://fonts.googleapis.com"><title>موقع المدرسة</title>
+<meta name="description" content="الموقع الرسمي للمدرسة: المراحل الدراسية، الرسوم، الأنشطة، والتسجيل الإلكتروني.">
+<style>
+/* Public school site — editorial school identity: generous hero, stage cards, fee tables, registration */
+:root{--h:165;--c:.11;
+ --bg:oklch(.982 .006 var(--h));--surface:#fff;--sunk:oklch(.955 .014 var(--h));--ink:oklch(.24 .02 var(--h));--muted:oklch(.47 .02 var(--h));--line:oklch(.89 .012 var(--h));
+ --accent:oklch(.47 var(--c) var(--h));--accent-2:oklch(.62 calc(var(--c) + .03) calc(var(--h) + 40));--accent-soft:oklch(.93 .035 var(--h));--accent-ink:#fff;--brass:oklch(.52 .11 70);
+ --font:"Tajawal","Segoe UI",Tahoma,sans-serif;--display:"Readex Pro",var(--font);color-scheme:light}
+:root[data-palette="royal"]{--h:255;--c:.13}:root[data-palette="violet"]{--h:295;--c:.12}:root[data-palette="sand"]{--h:62;--c:.1}:root[data-palette="rose"]{--h:350;--c:.13}:root[data-palette="sky"]{--h:225;--c:.11}:root[data-palette="olive"]{--h:120;--c:.09}
+:root[data-font="cairo"]{--font:"Cairo","Segoe UI",sans-serif;--display:"Cairo",sans-serif}:root[data-font="plex"]{--font:"IBM Plex Sans Arabic","Segoe UI",sans-serif}:root[data-font="almarai"]{--font:"Almarai","Segoe UI",sans-serif;--display:"Almarai",sans-serif}:root[data-font="kufi"]{--font:"Noto Kufi Arabic","Segoe UI",sans-serif;--display:"Noto Kufi Arabic",sans-serif}:root[data-font="messiri"]{--display:"El Messiri",var(--font)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:oklch(.18 .012 var(--h));--surface:oklch(.22 .014 var(--h));--sunk:oklch(.26 .016 var(--h));--ink:oklch(.94 .01 var(--h));--muted:oklch(.74 .02 var(--h));--line:oklch(.33 .016 var(--h));--accent:oklch(.76 .12 var(--h));--accent-soft:oklch(.31 .05 var(--h));--accent-ink:oklch(.2 .03 var(--h));--brass:oklch(.8 .12 75);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:oklch(.18 .012 var(--h));--surface:oklch(.22 .014 var(--h));--sunk:oklch(.26 .016 var(--h));--ink:oklch(.94 .01 var(--h));--muted:oklch(.74 .02 var(--h));--line:oklch(.33 .016 var(--h));--accent:oklch(.76 .12 var(--h));--accent-soft:oklch(.31 .05 var(--h));--accent-ink:oklch(.2 .03 var(--h));--brass:oklch(.8 .12 75);color-scheme:dark}
+html{font-size:17px;scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);line-height:1.75}
+*{box-sizing:border-box}h1,h2,h3{font-family:var(--display);margin:0;line-height:1.3;text-wrap:balance}p{margin:0}
+svg.i{width:1.3em;height:1.3em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.wrap{max-width:1160px;margin-inline:auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in oklch,var(--bg) 86%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:11;background:var(--bg)}
+header .wrap{display:flex;align-items:center;gap:14px;min-height:68px}
+.logo{width:44px;height:44px;border-radius:13px;display:grid;place-items:center;color:var(--accent-ink);background:linear-gradient(135deg,var(--accent),var(--accent-2));flex:none;overflow:hidden}
+.logo img{width:100%;height:100%;object-fit:cover}
+header b{font-family:var(--display);font-size:1.05rem;line-height:1.2}
+header nav{display:flex;gap:4px;margin-inline-start:auto;flex-wrap:wrap}
+header nav a{color:var(--ink);text-decoration:none;padding:8px 12px;border-radius:10px;font-weight:600}
+header nav a:hover{background:var(--sunk)}
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:12px;min-height:46px;padding:6px 20px;font-weight:700;text-decoration:none;border:1.5px solid var(--line);color:var(--ink);background:var(--surface);cursor:pointer;font:inherit;font-weight:700}
+.btn.pri{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.hero{background:linear-gradient(135deg,var(--accent),color-mix(in oklch,var(--accent) 55%,var(--accent-2)));color:var(--accent-ink);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center;padding-block:56px}
+.hero h1{font-size:clamp(1.9rem,4.2vw,3rem)}
+.hero p{font-size:1.12rem;opacity:.92;margin-top:14px;max-width:46ch}
+.hero .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.hero .cta .btn{border-color:#ffffff66;background:#ffffff1f;color:inherit}
+.hero .cta .btn.pri{background:var(--surface);color:var(--accent);border-color:var(--surface)}
+.hero svg.art{width:100%;max-width:440px;justify-self:center}
+.stats{display:flex;gap:26px;flex-wrap:wrap;margin-top:28px}
+.stats b{font-family:var(--display);font-size:1.6rem;display:block;line-height:1.2}
+.stats span{opacity:.85;font-size:.9rem}
+section.s{padding-block:56px}
+section.s>.wrap>h2{font-size:clamp(1.4rem,3vw,2rem)}
+section.s>.wrap>p.lead{color:var(--muted);margin-top:8px;max-width:62ch;font-size:1.05rem}
+.alt{background:var(--sunk)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:16px;margin-top:26px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:8px}
+.card .ci{width:50px;height:50px;border-radius:15px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent)}
+.card .ci svg{width:28px;height:28px}
+.card h3{font-size:1.1rem}.card p{color:var(--muted)}
+.stage-kg .ci{color:oklch(.58 .15 350);background:oklch(.94 .03 350)}.stage-mid .ci{color:oklch(.52 .14 255);background:oklch(.94 .03 255)}.stage-sec .ci{color:oklch(.55 .14 295);background:oklch(.94 .03 295)}
+.grades{display:flex;flex-wrap:wrap;gap:6px}
+.grades span{background:var(--sunk);border-radius:999px;padding:1px 10px;font-size:.82rem}
+.fees{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px;margin-top:26px}
+.fee{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:10px}
+.fee .big{font-family:var(--display);font-size:1.7rem;color:var(--brass);font-variant-numeric:tabular-nums}
+.fee table{width:100%;border-collapse:collapse;font-size:.92rem}.fee td{padding:6px 0;border-bottom:1px solid var(--line)}.fee td:last-child{text-align:end;font-variant-numeric:tabular-nums}
+.tag{display:inline-flex;align-self:flex-start;background:var(--accent-soft);color:var(--accent);border-radius:999px;padding:1px 12px;font-size:.82rem;font-weight:700}
+.pays{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.pays span{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:6px 12px;font-weight:600}
+.pays i{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;color:#fff;font-style:normal;font-size:.72rem;font-weight:800}
+.news{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:16px;margin-top:26px}
+.news article{background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+.news img{width:100%;aspect-ratio:16/9;object-fit:cover;max-width:100%}
+.news .ph{aspect-ratio:16/9;max-width:100%;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent-soft),var(--sunk));color:var(--accent)}
+.news .ph svg{width:56px;height:56px}
+.news div.b{padding:16px;display:flex;flex-direction:column;gap:6px}.news time{color:var(--muted);font-size:.85rem}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:26px}
+ol.steps{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;counter-reset:s}
+ol.steps li{counter-increment:s;display:flex;gap:14px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px}
+ol.steps li::before{content:counter(s);width:34px;height:34px;border-radius:50%;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;font-weight:800;flex:none}
+ul.docs{margin:10px 0 0;padding-inline-start:20px;color:var(--muted)}
+form{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:14px;align-content:start}
+label{display:flex;flex-direction:column;gap:6px;font-weight:600;color:var(--muted);font-size:.9rem}
+input,select,textarea{border:1.5px solid var(--line);background:var(--bg);border-radius:11px;min-height:48px;padding:8px 12px;font:inherit;color:var(--ink);width:100%}
+textarea{min-height:80px}.full{grid-column:1/-1}
+.ok-msg{grid-column:1/-1;background:var(--accent-soft);border-radius:12px;padding:14px;font-weight:700}
+details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-top:10px}
+summary{cursor:pointer;font-weight:700;min-height:28px}
+details p{color:var(--muted);margin-top:8px}
+.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:14px;margin-top:22px}
+.contact div{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px;display:flex;gap:12px;align-items:center}
+.contact b{display:block;font-variant-numeric:tabular-nums}
+footer{border-top:1px solid var(--line);padding-block:24px;color:var(--muted);font-size:.88rem}
+footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.app-cta{display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:22px;margin-top:26px}
+
+/* ---------- ready-made templates ---------- */
+.hero.has-img{background:linear-gradient(90deg,oklch(.25 .06 var(--h) / .92),oklch(.25 .06 var(--h) / .55)),var(--hero) center/cover}
+.photo-frame{width:100%;max-width:440px;aspect-ratio:4/3;object-fit:cover;border-radius:24px;box-shadow:0 20px 40px -18px #0008;justify-self:center}
+/* classic */
+.tpl-classic{--display:"Amiri","El Messiri",serif}
+.tpl-classic .hero{background:var(--surface);color:var(--ink);border-bottom:6px double var(--accent)}
+.tpl-classic .hero .wrap{grid-template-columns:1fr;text-align:center;justify-items:center}
+.tpl-classic .hero p{margin-inline:auto}
+.tpl-classic .hero .cta{justify-content:center}
+.tpl-classic .hero .cta .btn{background:var(--surface);color:var(--accent);border-color:var(--accent)}
+.tpl-classic .hero .cta .btn.pri{background:var(--accent);color:var(--accent-ink)}
+.tpl-classic .hero svg.art{max-width:300px;color:var(--accent)}
+.tpl-classic .stats{justify-content:center}
+.tpl-classic section.s>.wrap>h2{text-align:center}
+.tpl-classic section.s>.wrap>h2::after{content:"";display:block;width:90px;height:3px;margin:12px auto 0;background:linear-gradient(90deg,transparent,var(--brass),transparent)}
+.tpl-classic section.s>.wrap>p.lead{margin-inline:auto;text-align:center}
+.tpl-classic .card,.tpl-classic .fee{border-top:4px solid var(--brass);border-radius:6px}
+/* playful (kindergarten) */
+.tpl-playful{--font:"Almarai","Segoe UI",sans-serif;--display:"Almarai",sans-serif}
+.tpl-playful .hero{position:relative;padding-bottom:40px;background:radial-gradient(circle at 6% 18%,oklch(.85 .12 calc(var(--h) + 60)) 0 70px,transparent 71px),radial-gradient(circle at 44% 96%,oklch(.86 .12 calc(var(--h) - 60)) 0 110px,transparent 111px),linear-gradient(135deg,var(--accent),var(--accent-2))}
+.tpl-playful .hero::after{content:"";position:absolute;inset:auto 0 -1px 0;height:46px;background:var(--bg);clip-path:path('M0 30 Q 180 0 360 30 T 720 30 T 1080 30 T 1440 30 T 1800 30 T 2160 30 V 60 H 0 Z')}
+.tpl-playful .card,.tpl-playful .fee,.tpl-playful .news article{border-radius:28px;border-width:2px}
+.tpl-playful .cards .card:nth-child(4n+1) .ci{background:oklch(.93 .06 350);color:oklch(.55 .17 350)}
+.tpl-playful .cards .card:nth-child(4n+2) .ci{background:oklch(.94 .06 85);color:oklch(.6 .14 70)}
+.tpl-playful .cards .card:nth-child(4n+3) .ci{background:oklch(.93 .06 220);color:oklch(.52 .14 240)}
+.tpl-playful .cards .card:nth-child(4n+4) .ci{background:oklch(.93 .06 150);color:oklch(.5 .13 150)}
+.tpl-playful .card .ci{border-radius:50%;width:60px;height:60px}
+.tpl-playful .btn{border-radius:999px}
+/* academic */
+.tpl-academic{--font:"IBM Plex Sans Arabic","Segoe UI",sans-serif;--display:"Noto Kufi Arabic",sans-serif}
+.tpl-academic header.nav{background:oklch(.24 .05 var(--h));border-color:transparent}
+.tpl-academic header.nav b,.tpl-academic header nav a{color:#fff}
+.tpl-academic header nav a:hover{background:#ffffff1a}
+.tpl-academic .hero{background:linear-gradient(160deg,oklch(.26 .06 var(--h)),oklch(.34 .08 calc(var(--h) + 30)))}
+.tpl-academic .stats{background:var(--surface);color:var(--ink);border-radius:16px;padding:16px 22px;box-shadow:0 18px 40px -20px #000a}
+.tpl-academic .stats span{color:var(--muted);opacity:1}
+.tpl-academic .card,.tpl-academic .fee,.tpl-academic .news article{border-radius:8px}
+.tpl-academic section.s>.wrap>h2{border-inline-start:6px solid var(--accent);padding-inline-start:14px}
+/* minimal */
+.tpl-minimal .hero{background:var(--bg);color:var(--ink)}
+.tpl-minimal .hero h1{font-size:clamp(2.2rem,5.5vw,3.8rem);letter-spacing:-.01em}
+.tpl-minimal .hero h1::after{content:"";display:block;width:120px;height:8px;border-radius:4px;background:var(--accent);margin-top:16px}
+.tpl-minimal .hero .cta .btn{background:transparent;color:var(--ink);border-color:var(--ink)}
+.tpl-minimal .hero .cta .btn.pri{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.tpl-minimal .hero svg.art{color:var(--accent)}
+.tpl-minimal .alt{background:transparent;border-block:1px solid var(--line)}
+.tpl-minimal .card,.tpl-minimal .fee{background:transparent;box-shadow:none}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,220px),1fr));gap:10px;margin-top:22px}
+.gallery img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:14px;max-width:100%}
+@media (max-width:860px){.hero .wrap,.split{grid-template-columns:1fr}header nav{display:none}.hero svg.art{max-width:300px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head><body><div id="root" dir="rtl" lang="ar"></div>
+<script src="config.js"></script>
+<script src="data.js"></script>
+<script src="demo-data.js"></script>
+<script>
+(function(){
+document.documentElement.setAttribute('dir','rtl');document.documentElement.setAttribute('lang','ar');
+var CFG=window.SITE_CONFIG||{};
+(function(){try{var q=location.search.match(/[?&]w=([A-Za-z0-9_-]+)/)||location.hash.match(/w=([A-Za-z0-9_-]+)/);if(!q)return;var b=q[1].replace(/-/g,'+').replace(/_/g,'/');while(b.length%4)b+='=';var o=JSON.parse(decodeURIComponent(escape(atob(b))));if(o&&o.c){CFG.cloud=o.c;CFG.school=o.s||'';window.SITE_DATA=null}}catch(e){}})();
+var P={home:'<path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/>',users:'<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.4-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7"/><path d="M18 14.7c1.8.7 3 2.6 3.5 5.3"/>',shield:'<path d="M12 3 4.5 6v5.5c0 4.5 3.2 8 7.5 9.5 4.3-1.5 7.5-5 7.5-9.5V6z"/><path d="m9 12 2 2 4-4"/>',globe:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/>',trophy:'<path d="M8 4h8v5a4 4 0 0 1-8 0z"/><path d="M8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4"/><path d="M12 13v4M8 21h8M9.5 17h5"/>',blocks:'<rect x="3" y="13" width="8" height="8" rx="1.5"/><rect x="13" y="13" width="8" height="8" rx="1.5"/><rect x="8" y="3" width="8" height="8" rx="1.5"/>',pencil:'<path d="M4 20l4-1L19 8l-3-3L5 16z"/><path d="m14 6 3 3"/>',book:'<path d="M3 5h6a3 3 0 0 1 3 3v12a2.5 2.5 0 0 0-2.5-2.5H3z"/><path d="M21 5h-6a3 3 0 0 0-3 3v12a2.5 2.5 0 0 1 2.5-2.5H21z"/>',cap:'<path d="M2 9 12 4l10 5-10 5z"/><path d="M6 11v5c2 2 10 2 12 0v-5"/><path d="M22 9v6"/>',star:'<path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/>',phone:'<rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18h2"/>',pin:'<path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/>',whatsapp:'<path d="M4 20l1.3-4A8 8 0 1 1 8 18.7z"/>',heart:'<path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/>',bus:'<rect x="4" y="3" width="16" height="14" rx="2.5"/><path d="M4 10h16"/><path d="M7 17v3M17 17v3"/>',wallet:'<rect x="3" y="6" width="18" height="14" rx="2.5"/><path d="M3 10h18"/><path d="M16 15h2"/>',sun:'<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/>',calendar:'<rect x="3" y="5" width="18" height="16" rx="2.5"/><path d="M3 10h18M8 3v4M16 3v4"/>',clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>'};
+function ic(n){return '<svg class="i" viewBox="0 0 24 24" aria-hidden="true">'+(P[n]||P.star)+'</svg>'}
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function money(n){return Math.round(+n||0).toLocaleString('en-US')+' د.ع'}
+var STAGES={kg:{name:'الروضة',icon:'blocks',cls:'stage-kg',grades:['الحضانة','الروضة','التمهيدي'],txt:'لعب تعليمي، مهارات لغوية وحسابية، وتقرير يومي لولي الأمر عن طفله.'},pri:{name:'الابتدائية',icon:'pencil',cls:'stage-pri',grades:['الأول','الثاني','الثالث','الرابع','الخامس','السادس'],txt:'تأسيس قوي في العربية والرياضيات والإنكليزية مع أنشطة يومية.'},mid:{name:'المتوسطة',icon:'book',cls:'stage-mid',grades:['الأول','الثاني','الثالث'],txt:'منهج وطني مع مختبرات وحاسوب ومتابعة دقيقة للتحضير للوزاري.'},sec:{name:'الإعدادية',icon:'cap',cls:'stage-sec',grades:['الرابع','الخامس','السادس — علمي وأدبي'],txt:'تهيئة للامتحان الوزاري بدروس تقوية واختبارات تجريبية دورية.'}};
+var PM={cash:['نقداً','#2f8a57','د.ع'],mc_rafidain:['ماستر كارد الرافدين','#c4581f','MC'],zaincash:['زين كاش','#2b3460','ZC'],nbi:['المصرف الأهلي العراقي','#a8322b','NBI'],rasheed:['مصرف الرشيد','#1e6b55','RB'],nakheel:['بطاقة النخيل','#5d7f22','NK'],bank:['تحويل مصرفي','#4a5876','BT']};
+var MODE={annual:'سنوي على أقساط',term:'فصلي — كورسان',monthly:'شهري'};
+var ART='<svg class="art" viewBox="0 0 400 260" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><path d="M30 236h340" opacity=".6"/><rect x="70" y="120" width="260" height="116" rx="6" fill="#ffffff22"/><path d="M60 124 200 58l140 66" fill="#ffffff18"/><rect x="176" y="168" width="48" height="68" rx="4" fill="#ffffff30"/><path d="M200 58V22l34 10-34 10"/><circle cx="200" cy="104" r="16" fill="#ffffff26"/><path d="M200 96v8l6 4"/>'+[92,128,252,288].map(function(x){return '<rect x="'+x+'" y="146" width="22" height="22" rx="3" fill="#ffffff26"/><rect x="'+x+'" y="190" width="22" height="22" rx="3" fill="#ffffff26"/>'}).join('')+'<circle cx="340" cy="44" r="18" fill="#ffffff30"/><path d="M28 236c0-20 10-34 22-34s22 14 22 34" fill="#ffffff20"/><path d="M50 236v-26"/><path d="M330 236c0-16 8-28 18-28s18 12 18 28" fill="#ffffff20"/></g></svg>';
+function call(action,body){body=body||{};body.action=action;body.school=CFG.school||'';return fetch(CFG.cloud,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(body)}).then(function(r){return r.json()})}
+function feeCard(k,p,D){var items=p.items||[],gross=items.reduce(function(t,x){return t+(+x.amount||0)},0),f=D.fees;var per='',n=1;
+ if(p.mode==='monthly'){n=f.months||9;per='القسط الشهري'}else if(p.mode==='term'){n=2;per='قسط الكورس الواحد'}else{n=(f.dates||[1,2,3,4]).length;per='القسط الواحد'}
+ return '<div class="fee"><span class="tag">'+STAGES[k].name+'</span><span class="muted" style="color:var(--muted)">'+MODE[p.mode]+'</span><div><span class="big">'+money(Math.round(gross/n/1000)*1000)+'</span> <span style="color:var(--muted)">/ '+per+'</span></div><table>'+items.map(function(x){return '<tr><td>'+esc(x.label)+'</td><td>'+money(x.amount)+'</td></tr>'}).join('')+'<tr><td><b>المجموع السنوي</b></td><td><b>'+money(gross)+'</b></td></tr></table></div>'}
+function render(D){
+ var S=D.school||{},s=D.site||{},st=(S.stages||[]).filter(function(k){return STAGES[k]});
+ var tpl=(D.site&&D.site.tpl)||'modern';document.body.className='tpl-'+tpl;
+ if(D.palette)document.documentElement.setAttribute('data-palette',D.palette);
+ if(D.font){document.documentElement.setAttribute('data-font',D.font)}
+ document.title=S.name||document.title;
+ var wa=String(S.whatsapp||S.phone||'').replace(/\D/g,'');if(wa.charAt(0)==='0')wa='964'+wa.slice(1);
+ var appUrl=CFG.app||'../app/';
+ var h='';
+ h+='<header class="nav"><div class="wrap"><div class="logo">'+(S.logo?'<img src="'+esc(S.logo)+'" alt="">':ic('cap'))+'</div><b>'+esc(S.name)+'</b><nav aria-label="أقسام الموقع"><a href="#about">عن المدرسة</a><a href="#stages">المراحل</a><a href="#fees">الرسوم</a><a href="#news">الأنشطة</a><a href="#register">التسجيل</a><a href="#contact">تواصل</a></nav><a class="btn" href="'+esc(appUrl)+'">'+ic('users')+'دخول الأهالي</a></div></header>';
+ var himg=s.heroImg||'',framed=himg&&(tpl==='classic'||tpl==='minimal'||tpl==='playful');
+ h+='<section class="hero'+(himg&&!framed?' has-img':'')+'"'+(himg&&!framed?' style="--hero:url('+esc(himg)+')"':'')+'><div class="wrap"><div><span style="opacity:.85">'+esc(S.motto||'')+(S.year?' · العام الدراسي '+esc(S.year):'')+'</span><h1>'+esc(s.heroTitle||S.name)+'</h1><p>'+esc(s.heroText||'')+'</p><div class="cta"><a class="btn pri" href="#register">سجّل ابنك الآن</a><a class="btn" href="#fees">الرسوم والأقساط</a></div>';
+ h+='<div class="stats">'+st.map(function(k){return '<div><b>'+STAGES[k].name+'</b><span>'+STAGES[k].grades.length+' صفوف</span></div>'}).join('')+'</div></div>'+(framed?'<img class="photo-frame" src="'+esc(himg)+'" alt="">':(himg?'':ART))+'</div></section>';
+ h+='<section class="s" id="about"><div class="wrap"><h2>عن المدرسة</h2><p class="lead">'+esc(s.about||'')+'</p><div class="cards">'+(s.values||[]).map(function(v){return '<div class="card"><div class="ci">'+ic(v[0])+'</div><h3>'+esc(v[1])+'</h3><p>'+esc(v[2]||'')+'</p></div>'}).join('')+'</div></div></section>';
+ h+='<section class="s alt" id="stages"><div class="wrap"><h2>المراحل الدراسية</h2><p class="lead">بيئة واحدة تكبر مع الطالب من الروضة حتى السادس الإعدادي.</p><div class="cards">'+st.map(function(k){var g=STAGES[k];return '<div class="card '+g.cls+'"><div class="ci">'+ic(g.icon)+'</div><h3>'+g.name+'</h3><p>'+g.txt+'</p><div class="grades">'+g.grades.map(function(x){return '<span>'+x+'</span>'}).join('')+'</div></div>'}).join('')+'</div></div></section>';
+ var plans=(D.fees||{}).plans||{};
+ h+='<section class="s" id="fees"><div class="wrap"><h2>الرسوم والأقساط</h2><p class="lead">رسوم واضحة لكل مرحلة، بنظام شهري أو فصلي أو أقساط سنوية'+((D.fees||{}).siblingDiscount?'، مع خصم '+D.fees.siblingDiscount+'% للإخوة':'')+'.'+((D.fees||{}).transport?' النقل بالحافلة '+money(D.fees.transport)+' سنوياً.':'')+'</p><div class="fees">'+st.filter(function(k){return plans[k]}).map(function(k){return feeCard(k,plans[k],D)}).join('')+'</div>';
+ h+='<h3 style="margin-top:28px">وسائل الدفع</h3><div class="pays">'+(D.pay||['cash']).map(function(m){var x=PM[m]||[m,'#666','?'];return '<span><i style="background:'+x[1]+'">'+x[2]+'</i>'+x[0]+'</span>'}).join('')+'</div></div></section>';
+ var gal=(D.posts||[]).filter(function(p){return p.img});
+ if((D.posts||[]).length)h+='<section class="s alt" id="news"><div class="wrap"><h2>الأنشطة والأخبار</h2><div class="news">'+D.posts.map(function(p){return '<article>'+(p.img?'<img src="'+esc(p.img)+'" alt="">':'<div class="ph">'+ic('trophy')+'</div>')+'<div class="b"><span class="tag">'+esc(p.tag||'')+'</span><h3>'+esc(p.title)+'</h3>'+(p.text?'<p style="color:var(--muted)">'+esc(p.text)+'</p>':'')+'<time>'+esc(p.date)+'</time></div></article>'}).join('')+'</div>'+(gal.length>3?'<h3 style="margin-top:28px">معرض الصور</h3><div class="gallery">'+gal.map(function(p){return '<img src="'+esc(p.img)+'" alt="'+esc(p.title)+'">'}).join('')+'</div>':'')+'</div></section>';
+ var canApply=CFG.cloud&&s.published!==false;
+ h+='<section class="s" id="register"><div class="wrap"><h2>التسجيل</h2><p class="lead">'+(canApply?'املأ الاستمارة وسنتصل بكم خلال يومي عمل.':'تواصلوا معنا هاتفياً أو على واتساب لحجز مقعد.')+'</p><div class="split"><div><ol class="steps">'+(s.steps||[]).map(function(x){return '<li>'+esc(x)+'</li>'}).join('')+'</ol>'+((s.docs||[]).length?'<h3 style="margin-top:20px">المستمسكات المطلوبة</h3><ul class="docs">'+s.docs.map(function(x){return '<li>'+esc(x)+'</li>'}).join('')+'</ul>':'')+'</div>';
+ if(canApply)h+='<form id="apply"><label class="full">اسم الطالب الرباعي<input name="child" required></label><label>المرحلة<select name="stage">'+st.map(function(k){return '<option value="'+k+'">'+STAGES[k].name+'</option>'}).join('')+'</select></label><label>الصف<input name="grade" placeholder="مثال: الأول"></label><label>تاريخ الميلاد<input name="dob" type="date"></label><label>اسم ولي الأمر<input name="parent" required></label><label>رقم الهاتف<input name="phone" inputmode="tel" required></label><label class="full">ملاحظة<textarea name="note" placeholder="مثال: نحتاج الحافلة لحي…"></textarea></label><button class="btn pri full">إرسال طلب التسجيل</button></form>';
+ else h+='<div class="card"><h3>احجز مقعدك</h3><p>اتصل بنا أو راسلنا على واتساب.</p><b dir="ltr" style="font-size:1.3rem">'+esc(S.phone||'')+'</b>'+(wa?'<a class="btn pri" href="https://wa.me/'+wa+'?text='+encodeURIComponent('أرغب بتسجيل طالب في '+S.name)+'" target="_blank" rel="noopener">'+ic('whatsapp')+'واتساب</a>':'')+'</div>';
+ h+='</div></div></section>';
+ if((s.faqs||[]).length)h+='<section class="s alt"><div class="wrap"><h2>أسئلة شائعة</h2>'+s.faqs.map(function(q){return '<details><summary>'+esc(q[0])+'</summary><p>'+esc(q[1]||'')+'</p></details>'}).join('')+'</div></section>';
+ h+='<section class="s" id="contact"><div class="wrap"><h2>تواصل معنا</h2><div class="contact"><div>'+ic('phone')+'<span>الهاتف<b dir="ltr">'+esc(S.phone||'—')+'</b></span></div><div>'+ic('pin')+'<span>العنوان<b>'+esc([S.city,S.address].filter(Boolean).join('، ')||'—')+'</b></span></div>'+(s.mapUrl?'<div>'+ic('globe')+'<a href="'+esc(s.mapUrl)+'" target="_blank" rel="noopener">الموقع على الخريطة</a></div>':'')+'</div>';
+ h+='<div class="app-cta"><div><h3>تطبيق أولياء الأمور</h3><p style="color:var(--muted)">الحضور والدرجات وتقرير الروضة وتتبع الحافلة والأقساط والدفع الإلكتروني — على هاتفك.</p></div><a class="btn pri" href="'+esc(appUrl)+'">'+ic('users')+'دخول التطبيق</a></div></div></section>';
+ h+='<footer><div class="wrap"><span>© '+esc(S.name)+'</span><span>منصة رُقيّ للإدارة المدرسية</span></div></footer>';
+ document.getElementById('root').innerHTML=h;
+ var f=document.getElementById('apply');
+ if(f)f.addEventListener('submit',function(e){e.preventDefault();var d={};new FormData(f).forEach(function(v,k){d[k]=String(v).trim()});var b=f.querySelector('button');b.disabled=true;b.textContent='جارٍ الإرسال…';
+  call('apply',{app:d}).then(function(j){if(!j.ok)throw new Error(j.msg||'');f.innerHTML='<p class="ok-msg">وصل طلبكم. سنتصل بكم على الرقم '+esc(d.phone)+' قريباً.</p>'}).catch(function(err){b.disabled=false;b.textContent='إرسال طلب التسجيل';alert('تعذر الإرسال، حاول مرة أخرى أو اتصل بنا.')})});
+ var tf={classic:'Amiri:wght@400;700',playful:'Almarai:wght@400;700;800',academic:'Noto+Kufi+Arabic:wght@400;700',minimal:''}[tpl];
+ var fam=({tajawal:'Tajawal:wght@400;700;800',cairo:'Cairo:wght@400;700',plex:'IBM+Plex+Sans+Arabic:wght@400;700',almarai:'Almarai:wght@400;700;800',kufi:'Noto+Kufi+Arabic:wght@400;700',messiri:'El+Messiri:wght@500;700'})[D.font||'tajawal']||'Tajawal:wght@400;700;800';
+ var l=document.createElement('link');l.rel='stylesheet';l.href='https://fonts.googleapis.com/css2?family='+fam+(tf?'&family='+tf:'')+'&family=Readex+Pro:wght@500;700&display=swap';document.head.appendChild(l);
+}
+if(window.SITE_DATA){render(window.SITE_DATA)}
+else if(CFG.cloud){call('site',{}).then(function(j){if(j.ok)render(j.data);else throw 0}).catch(function(){document.getElementById('root').innerHTML='<p style="padding:40px;text-align:center">تعذر تحميل موقع المدرسة. حاول لاحقاً.</p>'})}
+else if(window.SITE_DEMO){render(window.SITE_DEMO);document.body.insertAdjacentHTML('afterbegin','<div style="position:sticky;top:0;z-index:50;background:#fff4d6;color:#5b4200;border-bottom:1px solid #f0d58a;padding:10px 16px;text-align:center;font-weight:600;font-size:.95rem">هذا موقع تجريبي بقالب جاهز. لعرض مدرستك: افتح البرنامج بحساب الإدارة ← إدارة الموقع ← النشر ← «رابط موقع المدرسة الجاهز». <a href="../app/" style="color:#0d6957">فتح البرنامج</a></div>')}
+else document.getElementById('root').innerHTML='<div style="max-width:560px;margin:8vh auto;padding:28px;text-align:center;font-family:Tajawal,Segoe UI,Tahoma,sans-serif;line-height:1.8"><div style="font-size:56px">🏫</div><h1 style="margin:.3em 0">موقع المدرسة غير مرتبط بعد</h1><p style="color:#5a6a64">افتح البرنامج بحساب الإدارة، ثم <b>إدارة الموقع ← النشر</b>، وانسخ «رابط موقع المدرسة الجاهز». هذا الرابط يعرض موقع مدرستك مباشرة، وتشاركه مع الأهالي.</p><p><a href="'+esc(CFG.app||'../app/')+'" style="display:inline-block;padding:14px 28px;border-radius:14px;background:#0d6957;color:#fff;text-decoration:none;font-weight:700">دخول البرنامج</a></p></div>';
+})();
+</script>
+</body></html>
